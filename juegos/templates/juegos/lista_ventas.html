@@ -1,0 +1,18 @@
+{% extends 'juegos/base.html' %}
+{% block title %}Lista de Ventas{% endblock %}
+{% block content %}
+<section class="card">
+    <h2>Ventas Registradas</h2>
+    <ul class="list">
+        {% for v in ventas %}
+            <li>
+                <strong>{{ v.cliente.nombre }}</strong> compró
+                <strong>{{ v.cantidad }}</strong> × {{ v.videojuego.titulo }}
+                el {{ v.fecha }} — Total: ${{ v.total }}
+            </li>
+        {% empty %}
+            <li>No hay ventas registradas aún.</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

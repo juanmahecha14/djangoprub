@@ -1,0 +1,14 @@
+{% extends 'juegos/base.html' %}
+{% block title %}Lista de Videojuegos{% endblock %}
+{% block content %}
+<section class="card">
+    <h2>Videojuegos Registrados</h2>
+    <ul class="list">
+        {% for j in videojuegos %}
+            <li><strong>{{ j.titulo }}</strong> — {{ j.genero }} — ${{ j.precio }} — Stock: {{ j.stock }}</li>
+        {% empty %}
+            <li>No hay videojuegos registrados aún.</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

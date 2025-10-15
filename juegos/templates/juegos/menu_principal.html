@@ -1,0 +1,34 @@
+{% extends 'juegos/base.html' %}
+{% block title %}Menú Principal{% endblock %}
+{% block content %}
+<section class="hero">
+    <h2>Bienvenido a Sphere Games</h2>
+    <p>Gestiona clientes, videojuegos y ventas desde un solo lugar.</p>
+    <div class="grid">
+        <a class="card" href="{% url 'registrar_cliente' %}">
+            <h3>➕ Registrar Cliente</h3>
+            <p>Almacena datos de tus compradores.</p>
+        </a>
+        <a class="card" href="{% url 'registrar_videojuego' %}">
+            <h3>🕹️ Registrar Videojuego</h3>
+            <p>Agrega títulos con precio, género y stock.</p>
+        </a>
+        <a class="card" href="{% url 'registrar_venta' %}">
+            <h3>🧾 Registrar Venta</h3>
+            <p>Genera ventas y calcula totales automáticamente.</p>
+        </a>
+        <a class="card" href="{% url 'lista_videojuegos' %}">
+            <h3>📚 Ver Videojuegos</h3>
+            <p>Consulta el catálogo disponible.</p>
+        </a>
+        <a class="card" href="{% url 'lista_clientes' %}">
+            <h3>👤 Ver Clientes</h3>
+            <p>Administra tus clientes registrados.</p>
+        </a>
+        <a class="card" href="{% url 'lista_ventas' %}">
+            <h3>💼 Ver Ventas</h3>
+            <p>Revisa el historial de ventas.</p>
+        </a>
+    </div>
+</section>
+{% endblock %}

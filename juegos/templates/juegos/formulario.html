@@ -1,0 +1,12 @@
+{% extends 'juegos/base.html' %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block content %}
+<section class="card form-card">
+    <h2>{{ titulo }}</h2>
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Guardar</button>
+    </form>
+</section>
+{% endblock %}

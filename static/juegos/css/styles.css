@@ -1,0 +1,93 @@
+:root {
+    --bg: #0f1226;
+    --card: #171a36;
+    --accent: #5b7cfa;
+    --accent-2: #6cf0e4;
+    --text: #e7e9ff;
+    --muted: #aeb3d6;
+    --shadow: rgba(0,0,0,.25);
+}
+
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    background: linear-gradient(180deg, #0b0e20, #0f1226 40%);
+    color: var(--text);
+}
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { width: min(1100px, 92vw); margin: 0 auto; padding: 0 1rem; }
+
+.header {
+    background: rgba(15,18,38,0.85);
+    backdrop-filter: blur(6px);
+    position: sticky; top: 0; z-index: 10;
+    box-shadow: 0 4px 20px var(--shadow);
+}
+.logo { margin: 0; padding: 1rem 0; }
+.nav { display: flex; gap: 1rem; flex-wrap: wrap; padding-bottom: 1rem; }
+.nav a { padding: .4rem .7rem; border-radius: 999px; background: #14183a; }
+.nav a:hover { background: #1a1f4d; }
+
+.main { padding: 2rem 0 4rem; }
+
+.hero h2 { font-size: 2rem; margin: 0 0 .5rem 0; }
+.hero p { color: var(--muted); margin-bottom: 1.5rem; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 1.2rem 1.2rem;
+    box-shadow: 0 20px 40px var(--shadow);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 24px 48px var(--shadow); }
+
+.form-card { max-width: 640px; margin: 0 auto; }
+.form p { display: grid; gap: .4rem; margin-bottom: .9rem; }
+.form input, .form select, .form textarea {
+    background: #0f1333;
+    border: 1px solid #2d336a;
+    color: var(--text);
+    border-radius: 10px;
+    padding: .65rem .8rem;
+    outline: none;
+}
+.form input:focus, .form select:focus, .form textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(91,124,250,0.25);
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #0b0e20;
+    border: none;
+    border-radius: 12px;
+    padding: .7rem 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 12px 30px var(--shadow);
+}
+.btn:hover { filter: brightness(1.05); }
+
+.success { text-align: center; }
+
+.list { list-style: none; padding-left: 0; display: grid; gap: .6rem; }
+.list li {
+    background: #12163a;
+    padding: .8rem 1rem;
+    border: 1px solid #262c63;
+    border-radius: 12px;
+}
+
+.footer { border-top: 1px solid rgba(255,255,255,0.06); }
+.footer .container { padding: 1.5rem 1rem; color: var(--muted); font-size: .95rem; }

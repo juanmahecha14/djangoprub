@@ -1,0 +1,14 @@
+{% extends 'juegos/base.html' %}
+{% block title %}Lista de Clientes{% endblock %}
+{% block content %}
+<section class="card">
+    <h2>Clientes Registrados</h2>
+    <ul class="list">
+        {% for c in clientes %}
+            <li><strong>{{ c.nombre }}</strong> — {{ c.correo }} — {{ c.telefono }}</li>
+        {% empty %}
+            <li>No hay clientes registrados aún.</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
